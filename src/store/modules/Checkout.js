@@ -1,27 +1,39 @@
 import { request } from '@/utils/api'
+import { cleanObject } from '@/utils/helpers'
+
+const nullState = {
+  step: 0,
+  status: null,
+  loading: false,
+  common: {
+    name: null,
+    surname: null,
+    phone: null,
+    email: null
+  },
+  delivery: {
+    type: 'courier',
+    types: ['courier', 'pickup'],
+    country: null,
+    city: null,
+    index: null,
+    address: null,
+    date: null,
+    description: null
+  }
+}
 
 export default {
   namespaced: true,
 
-  state: {
-    step: 0,
-    status: null,
-    loading: false,
-    common: {
-      name: '',
-      surname: '',
-      phone: '',
-      email: ''
-    },
-    address: {}
-  },
+  state: cleanObject(nullState),
 
   getters: {
     step: state => state.step,
     status: state => state.status,
     loading: state => state.loading,
     common: state => state.common,
-    address: state => state.address
+    delivery: state => state.delivery
   },
 
   actions: {
@@ -45,6 +57,10 @@ export default {
 
     clearStatus (state) {
       state.status = null
+    },
+
+    clearAddress (state) {
+      Object.assign(state.delivery, cleanObject(nullState.delivery))
     },
 
     loading (state, status) {
