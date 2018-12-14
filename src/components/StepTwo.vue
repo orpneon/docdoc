@@ -99,7 +99,12 @@
       ...mapActions('checkout', ['complete']),
 
       returnToPrev () {
+        const deliverySettings = this.$refs.deliverySettings
+
         this.clearAddress()
+        if (deliverySettings) {
+          deliverySettings.resetValidity()
+        }
         this.setStep(this.stepNumber - 1)
       },
 

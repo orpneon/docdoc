@@ -94,7 +94,7 @@
           },
           phone: {
             required,
-            minLength: minLength(12)
+            minLength: minLength(11)
           },
           email: {
             required,

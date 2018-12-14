@@ -1,5 +1,18 @@
 <template>
   <v-layout :class="b({}, 'row wrap')">
+    <v-flex :class="b('field', 'xs12 sm4 px-2')">
+      <p :class="b('field-label')">{{ locale.country.label }}</p>
+      <v-autocomplete
+        v-model="delivery.country"
+        :items="locale.country.items"
+        :placeholder="locale.country.placeholder"
+        :error-messages="$v.delivery.country.$dirty ? vErrors.delivery.country : []"
+        :no-data-text="locale.country.emptyText"
+        @blur="$v.delivery.country.$touch()"
+        solo
+      />
+    </v-flex>
+
     <v-flex
       v-for="(field, fieldName) in locale.fields"
       :key="fieldName"
@@ -21,6 +34,7 @@
 
 <script>
   import { minLength, maxLength, required } from 'vuelidate/lib/validators'
+  import countries from '@/store/data/countries'
   import vErrors from '@/mixins/vErrors'
   import { mapGetters } from 'vuex'
 
@@ -31,12 +45,13 @@
     data () {
       return {
         locale: {
+          country: {
+            label: 'Страна',
+            placeholder: 'Россия',
+            emptyText: 'Страна не найдена',
+            items: countries
+          },
           fields: {
-            country: {
-              label: 'Страна',
-              classes: 'xs12 sm4',
-              component: 'v-select'
-            },
             city: {
               label: 'Город',
               placeholder: 'Москва',
@@ -104,6 +119,10 @@
         this.$v.$touch()
       },
 
+      resetValidity () {
+        this.$v.$reset()
+      },
+
       isValid () {
         return !this.$v.delivery.$invalid
       }
@@ -114,4 +133,7 @@
 <style lang="stylus">
   .delivery-settings
     width 100%
+
+    &__field-label
+      font-weight bold
 </style>

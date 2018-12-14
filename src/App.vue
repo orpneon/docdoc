@@ -27,6 +27,6 @@
     height 100%
     overflow-x hidden
     overflow-y auto
-    color #2c3e50
+    color rgba(0, 0, 0, .87)
     background-color #f7f6f8
 </style>

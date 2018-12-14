@@ -1,6 +1,6 @@
 <template>
   <section :class="b()">
-    <header>
+    <header :class="b('header')">
       <h1>
         {{ locale.title }}
       </h1>
@@ -30,5 +30,13 @@
 
 <style lang="stylus" scoped>
   .main-content
+    max-width 800px
     width 100%
+    margin 0 auto 40px
+
+    &__header
+      margin 40px 0
+      text-align center
+      font-size 24px
+
 </style>
