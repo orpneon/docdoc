@@ -131,4 +131,8 @@
     &__field-label
       font-weight bold
 
+    .v-label
+      color rgba(0, 0, 0, .87) !important
+      font-size 14px
+
 </style>
