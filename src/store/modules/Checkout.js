@@ -7,7 +7,12 @@ export default {
     step: 0,
     status: null,
     loading: false,
-    common: {},
+    common: {
+      name: '',
+      surname: '',
+      phone: '',
+      email: ''
+    },
     address: {}
   },
 

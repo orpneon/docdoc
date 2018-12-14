@@ -12,6 +12,7 @@ import router from './router/'
 import store from './store/'
 import vueBemCn from 'vue-bem-cn/dist/vue-bem-cn.umd.min'
 import Vuetify from 'vuetify'
+import Vuelidate from 'vuelidate'
 
 // style
 import 'vuetify/dist/vuetify.min.css'
@@ -20,6 +21,7 @@ import 'material-design-icons-iconfont/dist/fonts/material-icons.css'
 Vue.config.productionTip = false
 Vue.use(vueBemCn)
 Vue.use(Vuetify)
+Vue.use(Vuelidate)
 
 new Vue({
   router,
