@@ -1,17 +1,21 @@
 <template>
   <section :class="b()">
     <header>{{ locale.title }}</header>
+    <checkout/>
   </section>
 </template>
 
 <script>
+  import Checkout from '@/components/Checkout'
+
   export default {
     name: 'main-content',
+    components: { Checkout },
 
     data () {
       return {
         locale: {
-          title: 'Оформить заказ'
+          title: 'Оформление заказа'
         }
       }
     }
