@@ -37,9 +37,10 @@ export default {
   },
 
   actions: {
-    complete ({ commit }) {
+    complete ({ commit, getters }) {
+      const params = { ...getters.common, ...getters.delivery }
       commit('loading', true)
-      return request('test', 'get', {}, 'success')
+      return request('test', 'get', params, 'success')
         .then(success => commit('setStatus', success))
         .catch(() => commit('setStatus', false))
         .finally(() => commit('loading', false))
