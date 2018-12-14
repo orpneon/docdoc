@@ -2,7 +2,7 @@ import { request } from '@/utils/api'
 import { cleanObject } from '@/utils/helpers'
 
 const nullState = {
-  step: 0,
+  step: 1,
   status: null,
   loading: false,
   common: {

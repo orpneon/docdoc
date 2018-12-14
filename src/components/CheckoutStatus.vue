@@ -1,14 +1,14 @@
 <template>
   <v-dialog
     :class="b()"
-    persistent
     :value="show"
+    persistent
     width="500"
   >
-    <v-card>
+    <v-card :class="b('card')">
 
-      <v-card-title>
-        <v-icon>
+      <v-card-title :class="b('result-icon', 'pa-0 pt-4')">
+        <v-icon x-large>
           {{ icon }}
         </v-icon>
       </v-card-title>
@@ -19,10 +19,13 @@
 
       <v-divider/>
 
-      <v-card-actions>
+      <v-card-actions
+        v-if="!success"
+        :class="b('actions')"
+      >
         <v-spacer/>
         <v-btn
-          @click="clearStatus(false)"
+          @click="clearStatus()"
           color="primary"
         >
           {{ locale.btn }}
@@ -69,6 +72,18 @@
       icon () {
         const icon = this.icons[this.status]
         return icon || ''
+      },
+
+      success () {
+        return this.status === 'success'
+      }
+    },
+
+    watch: {
+      show () {
+        if (this.success) {
+          setTimeout(() => window.location.reload(), 2000)
+        }
       }
     },
 
@@ -79,5 +94,11 @@
 </script>
 
 <style lang="stylus">
+  .checkout-status
+    &__card
+      text-align center
+      font-size 16px
 
+    &__result-icon
+      justify-content center
 </style>
