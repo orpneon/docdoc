@@ -1,5 +1,8 @@
 <template>
-  <v-stepper :value="step">
+  <v-stepper
+    :class="b()"
+    :value="step"
+  >
     <checkout-header/>
 
     <v-stepper-items>

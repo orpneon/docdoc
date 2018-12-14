@@ -1,8 +1,14 @@
 <template>
-  <v-stepper-content :step="stepNumber">
+  <v-stepper-content
+    :class="b()"
+    :step="stepNumber"
+  >
     <v-card/>
 
-    <v-btn @click="nextStep">
+    <v-btn
+      @click="nextStep"
+      color="primary"
+    >
       {{ locale.nextButton }}
     </v-btn>
   </v-stepper-content>

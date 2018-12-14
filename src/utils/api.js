@@ -1,5 +1,5 @@
 import axios from 'axios'
-const API_URL = '/'
+const API_URL = './api'
 
 function buildParams (paramsObject) {
   return Object.keys(paramsObject)
@@ -24,7 +24,7 @@ function buildParams (paramsObject) {
  */
 export function request (action, method, params = {}, root) {
   const data = method === 'post' ? params : buildParams(params)
-  const path = `${API_URL}${action}.php`
+  const path = `${API_URL}/${action}.php`
   const url = method === 'post' ? path : `${path}?${data}`
 
   return new Promise((resolve, reject) => {

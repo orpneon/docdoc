@@ -2,15 +2,17 @@
   <section :class="b()">
     <header>{{ locale.title }}</header>
     <checkout/>
+    <checkout-status/>
   </section>
 </template>
 
 <script>
   import Checkout from '@/components/Checkout'
+  import CheckoutStatus from '@/components/CheckoutStatus'
 
   export default {
     name: 'main-content',
-    components: { Checkout },
+    components: { CheckoutStatus, Checkout },
 
     data () {
       return {

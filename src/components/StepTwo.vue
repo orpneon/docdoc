@@ -1,19 +1,32 @@
 <template>
-  <v-stepper-content :step="stepNumber">
+  <v-stepper-content
+    :class="b()"
+    :step="stepNumber"
+  >
     <v-card/>
 
-    <v-btn @click="returnToPrev">
+    <v-btn
+      @click="returnToPrev"
+      color="primary"
+      :disabled="loading"
+    >
       {{ locale.returnButton }}
     </v-btn>
 
-    <v-btn @click="complete">
+    <v-btn
+      @click="completeTheOrder"
+      color="primary"
+      :loading="loading"
+    >
       {{ locale.completeButton }}
     </v-btn>
+
+
   </v-stepper-content>
 </template>
 
 <script>
-  import { mapGetters, mapMutations } from 'vuex'
+  import { mapGetters, mapMutations, mapActions } from 'vuex'
 
   export default {
     name: 'checkout-step-two',
@@ -29,18 +42,19 @@
     },
 
     computed: {
-      ...mapGetters('checkout', ['step'])
+      ...mapGetters('checkout', ['step', 'loading'])
     },
 
     methods: {
       ...mapMutations('checkout', ['setStep']),
+      ...mapActions('checkout', ['complete']),
 
       returnToPrev () {
         this.setStep(this.stepNumber - 1)
       },
 
-      complete () {
-        console.log('complete the order')
+      completeTheOrder () {
+        this.complete()
       }
     }
   }
