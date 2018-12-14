@@ -15,7 +15,7 @@
             :key="fieldName"
             :class="b('field', field.classes)"
           >
-            <p>{{ field.label }}</p>
+            <p :class="b('field-label')">{{ field.label }}</p>
             <v-text-field
               v-model="common[fieldName]"
               :placeholder="field.placeholder"
@@ -122,5 +122,11 @@
 </script>
 
 <style lang="stylus">
+  .checkout-step-one
+    &__field-label
+      font-weight bold
+
+    .v-input
+      font-size 14px
 
 </style>
