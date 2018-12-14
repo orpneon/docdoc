@@ -1,5 +1,5 @@
 <template>
-  <v-stepper-header :class="b()">
+  <v-stepper-header :class="b({}, 'px-3')">
 
     <v-stepper-step
       :complete="isCompleted(1)"

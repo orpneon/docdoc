@@ -22,6 +22,7 @@
               :error-messages="$v.common[fieldName].$dirty ? vErrors.common[fieldName] : []"
               :mask="field.mask"
               @blur="$v.common[fieldName].$touch()"
+              return-masked-value
               solo
             />
           </v-flex>

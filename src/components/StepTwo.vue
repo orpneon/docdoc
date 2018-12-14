@@ -4,14 +4,17 @@
     :step="stepNumber"
   >
     <v-form>
-      <v-container>
+      <v-container pt-2>
         <v-layout
           row
           wrap
         >
 
           <v-flex :class="b('field', 'xs12')">
-            <v-radio-group v-model="delivery.type">
+            <v-radio-group
+              v-model="delivery.type"
+              :class="b('delivery-type', 'ma-0')"
+            >
               <v-radio
                 v-for="type in delivery.types"
                 :key="type"
