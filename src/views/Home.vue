@@ -1,6 +1,10 @@
 <template>
   <section :class="b()">
-    <header>{{ locale.title }}</header>
+    <header>
+      <h1>
+        {{ locale.title }}
+      </h1>
+    </header>
     <checkout/>
     <checkout-status/>
   </section>

@@ -41,7 +41,7 @@
 </template>
 
 <script>
-  import { email, maxLength, required } from 'vuelidate/lib/validators'
+  import { email, maxLength, minLength, required } from 'vuelidate/lib/validators'
   import { mapGetters, mapMutations } from 'vuex'
   import vErrors from '@/mixins/vErrors'
 
@@ -93,7 +93,8 @@
             maxLength: maxLength(255)
           },
           phone: {
-            required
+            required,
+            minLength: minLength(12)
           },
           email: {
             required,

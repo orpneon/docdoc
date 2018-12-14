@@ -21,7 +21,10 @@
             </v-radio-group>
           </v-flex>
 
-          <delivery-settings v-if="showDeliverySettings"/>
+          <delivery-settings
+            v-if="showDeliverySettings"
+            ref="deliverySettings"
+          />
 
           <v-flex xs12>
             <p :class="b('field-label')">{{ locale.fields.description.label }}</p>
@@ -101,7 +104,15 @@
       },
 
       completeTheOrder () {
-        this.complete()
+        const deliverySettings = this.$refs.deliverySettings
+
+        if (deliverySettings) {
+          deliverySettings.checkValidity()
+        }
+
+        if (!deliverySettings || deliverySettings.isValid()) {
+          this.complete()
+        }
       }
     }
   }
