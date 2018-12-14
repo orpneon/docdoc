@@ -14,7 +14,6 @@ import vueBemCn from 'vue-bem-cn/dist/vue-bem-cn.umd.min'
 import Vuetify from 'vuetify'
 
 // style
-import 'vuejs-noty/dist/vuejs-noty.css'
 import 'vuetify/dist/vuetify.min.css'
 import 'material-design-icons-iconfont/dist/fonts/material-icons.css'
 
