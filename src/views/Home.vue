@@ -5,8 +5,8 @@
         {{ locale.title }}
       </h1>
     </header>
-    <checkout/>
-    <checkout-status/>
+    <checkout :class="b('checkout')"/>
+    <checkout-status :class="b('status-modal')"/>
   </section>
 </template>
 

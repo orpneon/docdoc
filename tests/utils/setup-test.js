@@ -4,6 +4,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import Router from 'vue-router'
 import Vuetify from 'vuetify'
+import Vuelidate from 'vuelidate'
 
 export function setupTest () {
   const localVue = createLocalVue()
@@ -11,6 +12,7 @@ export function setupTest () {
   localVue.use(vueBemCn)
   localVue.use(Router)
   localVue.use(Vuex)
+  localVue.use(Vuelidate)
   Vue.use(Vuetify)
 
   return {
