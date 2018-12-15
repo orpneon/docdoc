@@ -12,6 +12,7 @@ module.exports = {
   ],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
+    '^@root/(.*)$': '<rootDir>/$1',
     '\\.(css|less|styl)$': 'identity-obj-proxy'
   },
   transform: {

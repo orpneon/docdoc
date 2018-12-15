@@ -1,4 +1,4 @@
-import { setupTest } from '@/../tests/utils/setup-test'
+import { setupTest } from '@root/tests/utils/setup-test'
 import Home from '@/views/Home.vue'
 
 const { shallow } = setupTest()
