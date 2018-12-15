@@ -13,7 +13,7 @@
         </v-icon>
       </v-card-title>
 
-      <v-card-text>
+      <v-card-text :class="b('message')">
         {{ message }}
       </v-card-text>
 
@@ -25,6 +25,7 @@
       >
         <v-spacer/>
         <v-btn
+          :class="b('action-btn')"
           @click="clearStatus()"
           color="primary"
         >
@@ -53,7 +54,9 @@
         icons: {
           success: 'sentiment_satisfied',
           failure: 'sentiment_very_dissatisfied'
-        }
+        },
+
+        allowedStatuses: ['success', 'failure']
       }
     },
 
@@ -61,7 +64,7 @@
       ...mapGetters('checkout', ['status']),
 
       show () {
-        return !!this.status
+        return !!this.status && this.allowedStatuses.includes(this.status)
       },
 
       message () {
