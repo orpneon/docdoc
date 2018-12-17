@@ -1,4 +1,4 @@
-import { setupTest, generateStore, timeout } from '@root/tests/utils/setup-test'
+import { setupTest, generateStore } from '@root/tests/utils/setup-test'
 import CheckoutStatus from '@/components/CheckoutStatus.vue'
 import CheckoutModule from '@/store/modules/Checkout'
 

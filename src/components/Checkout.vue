@@ -3,11 +3,11 @@
     :class="b()"
     :value="step"
   >
-    <checkout-header/>
+    <checkout-header :class="b('header')"/>
 
     <v-stepper-items>
-      <checkout-step-one/>
-      <checkout-step-two/>
+      <checkout-step-one :class="b('step-one')"/>
+      <checkout-step-two :class="b('step-two')"/>
     </v-stepper-items>
 
   </v-stepper>
@@ -29,7 +29,3 @@
     }
   }
 </script>
-
-<style lang="stylus">
-
-</style>
