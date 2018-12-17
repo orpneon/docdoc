@@ -184,8 +184,6 @@
 
 <style lang="stylus">
   .delivery-settings
-    width 100%
-
     &__field-label
       font-weight bold
 </style>

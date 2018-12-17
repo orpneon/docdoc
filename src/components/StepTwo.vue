@@ -128,8 +128,6 @@
 
 <style lang="stylus">
   .checkout-step-two
-    width 100%
-
     &__field-label
       font-weight bold
 
