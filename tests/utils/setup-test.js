@@ -35,3 +35,7 @@ export function setupTest () {
 export function generateStore (modules = {}) {
   return new Vuex.Store({ modules })
 }
+
+export function timeout (timeout = 0) {
+  return new Promise(resolve => setTimeout(resolve, timeout))
+}

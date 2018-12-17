@@ -2,15 +2,17 @@
   <v-stepper-header :class="b({}, 'px-3')">
 
     <v-stepper-step
+      :class="b('step-one', { active: step === 1 })"
       :complete="isCompleted(1)"
       step="1"
     >
       {{ locale.stepOne }}
     </v-stepper-step>
 
-    <v-divider/>
+    <v-divider :class="b('divider')"/>
 
     <v-stepper-step
+      :class="b('step-two', { active: step === 2 })"
       :complete="isCompleted(2)"
       step="2"
     >
@@ -46,7 +48,3 @@
     }
   }
 </script>
-
-<style lang="stylus">
-
-</style>

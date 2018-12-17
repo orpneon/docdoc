@@ -10,7 +10,7 @@ const getWrapper = () => shallow(Checkout, {
   })
 })
 
-describe('CheckoutStatus.vue', () => {
+describe('Checkout.vue', () => {
   it('Component has been rendered', () => {
     const wrapper = getWrapper()
     const className = `.${wrapper.vm.$options.name}`
