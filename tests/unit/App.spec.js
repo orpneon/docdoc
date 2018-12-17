@@ -6,6 +6,6 @@ const { shallow } = setupTest()
 describe('App.vue', () => {
   it('Component has been rendered', () => {
     const wrapper = shallow(App)
-    expect(wrapper.findAll('.main-section').length).toBe(1)
+    expect(wrapper.findAll('.main-section')).toHaveLength(1)
   })
 })

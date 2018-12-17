@@ -1,7 +1,7 @@
 <template>
   <section :class="b()">
     <header :class="b('header')">
-      <h1>
+      <h1 :class="b('header-title')">
         {{ locale.title }}
       </h1>
     </header>
@@ -37,6 +37,8 @@
     &__header
       margin 40px 0
       text-align center
-      font-size 24px
+
+    &__header-title
+      font-size 30px
 
 </style>
