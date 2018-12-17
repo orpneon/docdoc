@@ -27,7 +27,7 @@ describe('StepperHeader.vue', () => {
     expect(wrapper.findAll(`${className}__step-two`)).toHaveLength(1)
   })
 
-  it('Check of ctepping', async () => {
+  it('Check of stepping', async () => {
     const wrapper = getWrapper()
     const className = `${wrapper.vm.$options.name}`
     const stepOneClasses = wrapper.find(`.${className}__step-one`).classes()

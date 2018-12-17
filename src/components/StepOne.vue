@@ -33,6 +33,7 @@
 
     <v-btn
       @click="nextStep"
+      :class="b('next-step-btn')"
       :disabled="$v.common.$dirty && $v.common.$invalid"
       color="primary"
     >
